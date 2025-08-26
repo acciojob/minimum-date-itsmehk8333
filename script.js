@@ -1,9 +1,18 @@
 function minDate(dates) {
-  //write you code here
+  // assume the first date is smallest
+  let sm = dates[0];
+
+  for (let i = 1; i < dates.length; i++) {
+    // compare by converting to Date object
+    if (new Date(dates[i]) < new Date(sm)) {
+      sm = dates[i];
+    }
+  }
+
+  return sm; // return the smallest date
 }
 
 // Do not change the code
-
 var dates = [
   "2023/03/01",
   "2023/03/02",
@@ -37,4 +46,4 @@ var dates = [
   "2023/03/30",
 ];
 
-alert(minDate(dates));
+alert(minDate(dates)); // ✅ alert will show only once
